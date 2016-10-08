@@ -1,0 +1,69 @@
+配置用户名和邮箱：(global选项所有项目默认使用用户信息)
+git config --global user.name "Jion-e"
+git config --global user.email maywzp@foxmail.com
+
+查看配置信息：
+git config --list
+
+查看某个环境变量：
+git config user.name
+
+基本操作：
+初始化git仓库：
+git init
+
+添加文件到缓存：
+git add .  
+git add README
+
+查看项目状态：
+git status -s
+A(添加文件)
+AM(添加并修改)
+D(删除)
+
+对比修改：
+git diff README
+
+将缓存区的内容添加到仓库中：
+git commit -m '注释'
+
+git add与git commit结合：
+git commit -a
+
+取消已缓存文件：
+git reset HEAD --README
+
+删除文件：
+git rm (缓存区和硬盘都删除)
+git rm --cached (只是缓存区删除)
+
+文件重命名：
+git mv README README-RM
+
+链接github作为远程仓库：
+1.生产ssh key:  ssh-keygen -t rsa -C "maywzp@foxmail.com" (生产的文件在C:\Users\Administrator\.ssh里)
+2.在github的SSH Keys里添加id_rsa.pub文件里的信息
+3.验证是否成功： ssh -T git@github.com
+4.github中创建新仓库
+
+5.将本地仓库推送到远程仓库： 
+git remote add origin https://github.com/Jion-e/firstblood.git (远程仓库名)
+git push -u origin master
+
+或：
+6:将远程仓库迁移到本地：
+cd myWeb
+echo "# firstblood" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/Jion-e/firstblood.git
+git push -u origin master
+
+查看当前配置的远程仓库：
+git remote -v
+
+本地获取远程仓库的更新：
+git fetch origin  (查看是否有更新)
+git merge origin/master (将更新同步到本地)

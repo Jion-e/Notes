@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+
+/**************** 全局颜色 ******************/
+@color-dark:            #444;
+@color-black:           #1E1E1E;
+@color-gray:            #888;
+
+@base-color:            #13bfa9;
+// @base-color:            @brand-primary;
+
+@link-color:            @color-dark;
+@link-hover-color:      @base-color;
+
+@body-bg:               #fff;
+@text-color:            @color-dark;
+
+@btn-disabled-color:    #ccc;
+@base-border-color:     #EAEAEA;
+@hover-border-color:    darken(@base-border-color, 10%);
+
+
+@brand-primary:         darken(#428bca, 6.5%); // #337ab7
+@brand-success:         #5cb85c;
+@brand-info:            #5bc0de;
+@brand-warning:         #f0ad4e;
+@brand-danger:          #d9534f;
+
+
+/**************** 杂项 ******************/
+@line-height-base:          1.428571429;
+@base-border-radius:        0.2rem;
+@padding-btn:               0.4rem 0.8rem;
+@padding-btn-md:            0.5rem 1.4rem;
+@padding-btn-lg:            0.6rem 1.8rem;
+@input-width:               7.5rem;
+@padding-input:             0.3rem 0.6rem;
+@padding-input-lg:          0.6rem 0.6rem;
+
+//三角形
+@caret-size:                8px;
+@caret-color:               @base-color;
+
+/**************** 字体 ******************/
+@font-family-pc:            'microsoft yahei',arial,sans-serif;
+@font-family-mobile:         Helvetica;
+@font-size-base:             0.7rem;  											 			 //~14px
+@font-size-large:            ceil((@font-size-base * 1.142857));  // ~16px
+@font-size-small:            ceil((@font-size-base * 0.85));  		// ~12px
+
+/**************** 分辨率 ******************/
+@screen-phone:               480px;
+@screen-tablet:              768px;
+@screen-desktop:             992px;
+@screen-lg-desktop:          1620px;
+@tablet:                     1080px;
+
+
+/******************************************************* 重置样式 *****************************************************/
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;box-sizing:border-box}
+// html{-webkit-text-size-adjust:none;-ms-text-size-adjust:none;box-sizing:border-box;}
+a,article,aside,body,button,dd,details,div,dl,dt,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,img,input,li,menu,nav,ol,p,section,select,table,tbody,td,textarea,th,tr,ul{-webkit-tap-highlight-color:transparent}
+article,aside,body,dd,details,dl,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,input,legend,menu,nav,ol,p,section,select,td,textarea,th,ul{margin:0;padding:0;border:none;outline:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+:focus{outline:0}
+*,:after,:before{box-sizing:inherit}
+i{font-style:normal;vertical-align: middle !important;margin-right: 3px;}
+strong{font-weight:600}
+p{word-wrap:break-word;line-height:@line-height-base;}
+ol,ul{list-style-type:none}
+a,a:hover{text-decoration:none}
+img{max-width:100%;border:none;vertical-align:middle;transition: all 0.5s ease;}
+table{border-collapse:collapse;border-spacing:0}
+
+/**************** rem缩放比例  ******************/
+@rem-base-size:        20px; 		  	//font-size-base: 20*0.7=14px
+@rem-lg-size:          22.85714px; 	//font-size-base: 22.85714*0.7=16px
+@rem-sm-size:          17.14285px; 	//font-size-base: 17.14285*0.7=12px
+
+html{font-size:20px}
+@media (min-width: 1620px) {
+	html{font-size:22.8px}
+}
+@media (max-width: 1080) {
+	html{font-size:17.2px}
+}
+
+//手机
+@media (max-width: 415px) {
+	html{font-size:14px}
+}
+
+
+
+body{color:@text-color;font:@font-size-base/@line-height-base @font-family-mobile;-webkit-font-smoothing:antialiased;background:@body-bg}
+a{color:@link-color;font:@font-size-base @font-family-mobile;-webkit-font-smoothing:antialiased;transition:all .2s ease}
+a:hover{color:@link-hover-color;cursor:pointer}
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6{color:@text-color;font-weight: 600;}
+h1,.h1{font-size:1.4rem}
+h2,.h2{font-size:1.2rem}
+h3,.h3{font-size:1rem}
+h4,.h4{font-size:0.8rem}
+h5,.h5{font-size:0.7rem}
+h6,.h6{font-size:0.6rem}
+[v-cloak]{visibility:hidden}
+button,input,a{transition:all .3s ease}
+textarea {-webkit-appearance: none;}
+figure figcaption{margin: .5rem;}
+//select默认样式
+// select{appearance:none;-moz-appearance:none;-webkit-appearance:none;border:1px solid @base-border-color;padding-right: 14px;}
+//取消chrome输入框高亮效果
+input:-webkit-autofill{-webkit-box-shadow:0 0 0 1000px #fff inset}
+//取消iPhone按钮自带样式
+input[type="button"], input[type="submit"], input[type="reset"] {-webkit-appearance: none;}
+//取消Firefox input自带的样式
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner{border:none;padding:0;}
+//文本被选中样式
+::selection {
+    // background: #FFF7B6;
+    background: lighten(@base-color, 48%);
+    color: black;
+}
+/**************** 修改pc字体 ******************/
+@media (min-width:@screen-desktop){a,body{font-family:@font-family-pc}}
+
+/****************************************** 杂项 ****************************************/
+.clearfix:after,.clearfix:before{content:"";display:block;visibility:hidden;height:0;clear:both;}
+.clearfix{zoom:1;overflow: auto;clear: both;}
+//三角形
+.caret{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-top:@caret-size solid @caret-color;border-right:@caret-size solid transparent;border-left:@caret-size solid transparent}
+.caret-up{display:inline-block;width:0;height:0;margin-left:2px;vertical-align:middle;border-bottom:@caret-size solid @caret-color;border-right:@caret-size solid transparent;border-left:@caret-size solid transparent}
+//水平居中
+.center-block{display: block;margin-left: auto;margin-right: auto;}
+.text-left{text-align: left;}
+.text-center{text-align: center;}
+.text-right{text-align: right;}
+
+//垂直居中
+.valign-inline(@height: 30px;){height: @height;line-height: @height;vertical-align: middle;}
+.valign-block{.display-flex();.align-items(center);}
+
+//文字分散布局
+.text-justify{text-align: justify;-moz-text-align-last: justify;-webkit-text-align-last: justify;text-align-last: justify;}
+//文字省略
+.text-truncate{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;}
+.fl-left{float: left !important;}
+.fl-right{float: right !important;}
+
+//长宽一致
+.size(@size: 2.5rem){width: @size;height: @size}
+//长宽一致，居中显示
+.size-center(@size: 2.5rem){width: @size;.valign-inline(@size);.text-center;}
+
+//全屏图
+.full-img{width: 100%;}
+.full-bg {background-repeat: no-repeat;background-position: center;background-size: 100% 100%;}
+
+//定位
+.pos-fixed{position: fixed;left: 0;top: 0;width: 100%;}
+.pos-absolute{position: absolute;left: 0;top: 0;}
+
+//z-index等级
+.z-index-step-1{z-index: 9;}
+.z-index-step-2{z-index: 99;}
+.z-index-step-3{z-index: 999;}
+.z-index-step-4{z-index: 9999;}
+.z-index-step-5{z-index: 99999;}
+
+//隐藏文字
+.sr-only {position: absolute;width: 1px;height: 1px;padding: 0;margin: -1px;overflow: hidden;clip: rect(0, 0, 0, 0);border: 0;text-indent: -9999px;}
+/**************************************** 图框 *****************************************/
+.img-thumbnail{background-color:@body-bg;border-radius:0;border:1px solid @base-border-color;display:inline-block;height:auto;line-height:1;max-width:100%;padding:3px;
+	a&:hover,a&:focus {background-color: @body-bg;;border-color: @hover-border-color;outline: none;}}
+
+/*************************************** input *****************************************/
+.form{width: 60%;.center-block;padding: 1rem;border: 1px solid @base-border-color;}
+.form-group{margin-bottom:0.75rem;&:last-child{ margin-bottom: 0; };
+		.form-control{display: inline-block;width: 70%;}
+		.form-label{display: inline-block;width: 28%;.text-right}}
+.form-control{ width:@input-width;padding:@padding-input;font-size:@font-size-base;line-height:1.42857143;color:@text-color;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:@base-border-radius;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+.form-control-lg{padding: @padding-input-lg;width: @input-width*2;}
+.form-block{display: block !important;width: 100% !important;}
+.form-control:focus{border-color:lighten(@base-color, 25%);outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px lighten(@base-color, 25%);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px lighten(@base-color, 25%)}
+
+/**************************************** button *****************************************/
+.btn{display:inline-block;margin-bottom:0;
+  font-weight:400;font-size:@font-size-base;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;user-select:none;padding:@padding-btn;letter-spacing: .5px;text-transform: uppercase;
+	&:hover,&:focus{background: #ccc;.z-depth-1;};
+	&.disabled,&[disabled]{.btn-disabled}
+}
+//禁用样式
+.btn-disabled{background: @btn-disabled-color !important;border-color: @btn-disabled-color !important;color:@color-dark !important;box-shadow: none !important;cursor: not-allowed;}
+//圆角按钮
+.btn-radius{.btn();border-radius: @base-border-radius;}
+//中等按钮
+.btn-md{padding: @padding-btn-md;letter-spacing: .8px;}
+//大按钮
+.btn-lg{padding: @padding-btn-lg;letter-spacing: 1px;}
+//块级按钮
+.btn-block{width: 100%;padding:  @padding-btn-lg;}
+//默认按钮
+.btn-default {color: @text-color;background-color: transparent;border-color: #ccc;
+	&:hover,&:focus,&.active{color:#fff;background-color: @base-color;border-color: @base-color;}
+}
+//主体按钮
+.btn-primary {color: #fff;background-color: @base-color;border-color: @base-color;
+	&:hover,&:focus,&.active{color: #fff;background-color: darken(@base-color, 5%);;border-color: darken(@base-color, 5%);}
+}
+
+//链接按钮
+.btn-link {padding: 3px 0;font-weight: 400;color: @link-color;border-radius: 0;background-color: transparent;-webkit-box-shadow: none;box-shadow: none !important;
+	&:hover,&:focus,&.active{color:@link-hover-color;border-bottom:1px dotted @base-color;background: transparent;}
+}
+
+/********************************** input + button 组合拳 *************************************/
+//.form-close + .group-section配合使用
+.form-close{.clearfix;.form-control{width: 100%;}}
+.form-close .group-section{float: left;&:first-child>*:last-child{border-top-right-radius: 0;border-bottom-right-radius: 0;height: 34px;}
+&:last-child>*:first-child{border-top-left-radius: 0;border-bottom-left-radius: 0;height: 34px;}}
+
+/************************************** checkbox **********************************************/
+.checkbox{position:relative;-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:0;background-color:#fff;border-radius:100%;border:1px solid #ccc;width:20px;height:20px;vertical-align:middle;cursor:pointer;}
+.checkbox:after{border:2px solid transparent;border-left:0;border-top:0;content:" ";top:3px;left:6px;position:absolute;width:6px;height:9px;-webkit-transform:rotate(45deg);transform:rotate(45deg);border-color:#fff}
+.checkbox:checked{background-color:@base-color;border-color:@base-color}
+.checkbox-lg{width:25px;height:25px;}
+.checkbox-lg:after{top:4px;left:8px;width:7px;height:11px;}
+
+/**************************************** radio **********************************************/
+.radio{-webkit-appearance:none;-moz-appearance:none;appearance:none;outline:0;background-color:#fff;border-radius:100%;border:1px solid #ccc;position:relative;width:20px;height:20px;vertical-align:middle;user-select:none;cursor:pointer;}
+.radio:after{content:" ";border-radius:100%;top:5px;left:5px;position:absolute;width:8px;height:8px}
+.radio:checked{background-color:@base-color;border-color:@base-color}
+.radio:checked:after{background-color:#fff}
+.radio-lg{width: 25px;height: 25px;}
+.radio-lg:after{top:8px;left:8px;}
+
+/*************************************** 开关按钮 ********************************************/
+.switch-btn input[type=checkbox]{position:absolute;opacity:0}
+.switch-btn input[type=checkbox].ios-switch+div{vertical-align:middle;width:40px;height:20px;border:1px solid #ccc;border-radius:999px;background-color:#eee;-webkit-transition-duration:.4s;-webkit-transition-property:background-color,box-shadow;box-shadow:inset 0 0 0 0 rgba(0,0,0,.075);cursor:pointer;}
+.switch-btn input[type=checkbox].ios-switch:checked+div{width:40px;background-position:0 0;background-color:@base-color;border:1px solid #ccc;box-shadow:inset 0 0 0 10px @base-color;}
+.switch-btn input[type=checkbox].ios-switch+div>div{float:left;width:18px;height:18px;border-radius:inherit;background:#fff;-webkit-transition-timing-function:cubic-bezier(.54,1.85,.5,1);-webkit-transition-duration:.4s;-webkit-transition-property:transform,background-color,box-shadow;-moz-transition-timing-function:cubic-bezier(.54,1.85,.5,1);-moz-transition-duration:.4s;-moz-transition-property:transform,background-color;box-shadow:0 2px 5px rgba(0,0,0,.075),0 0 0 1px rgba(0,0,0,.075);pointer-events:none;margin-top:1px;margin-left:1px}
+.switch-btn input[type=checkbox].ios-switch:checked+div>div{-webkit-transform:translate3d(20px,0,0);-moz-transform:translate3d(20px,0,0);background-color:#fff;box-shadow:0 2px 5px rgba(0,0,0,.075),0 0 0 1px lighten(@base-color, 25%)}
+.switch-btn-lg input[type=checkbox].ios-switch + div{width: 45px;height: 25px;}
+.switch-btn-lg input[type=checkbox].ios-switch:checked+div{width: 45px;}
+.switch-btn-lg input[type=checkbox].ios-switch + div>div{width: 23px;height: 23px;}
+
+/****************************************** 表 格 **********************************************/
+//默认表格
+.table{width:100%;text-align: center;}
+.table td,.table th{padding: 5px 0;border-bottom: 1px solid @base-border-color;}
+//斑马线
+.table-striped tbody tr:nth-of-type(odd){background: lighten(@base-color, 52%);}
+//hover效果
+.table-hover tbody tr:hover {background-color: lighten(@base-color, 45%);}
+//边框
+.table-bordered td,.table-bordered th{border:1px solid @base-border-color;}
+.table-bordered tbody tr:hover td,th{border-color: transparent;}
+//圆角表格
+.table-radius{border-spacing:0;border-collapse:collapse;}
+.table-radius>thead>tr{background: lighten(@base-color, 30%);}
+.table-radius td,.table-radius th{border:none;}
+.table-radius>thead>tr>th:first-child{border-top-left-radius:8px}
+.table-radius>thead>tr>th:last-child{border-top-right-radius:8px}
+.table-radius>tbody>tr:last-child>td:first-child{border-bottom-left-radius:8px}
+.table-radius>tbody>tr:last-child>td:last-child{border-bottom-right-radius:8px}
+
+/****************************************** flex布局 **************************************************/
+.display-flex{display:-webkit-flex;display:-ms-flexbox;display:flex;}
+.display-inline-flex{display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex}
+//flex-flow属性是flex-direction属性和flex-wrap属性的简写形式
+.flex-flow(@values:'row nowrap'){-webkit-flex-flow: @values;-ms-flex-flow: @values;flex-flow: @values;}
+//flex-wrap:nowrap, wrap, wrap-reverse;
+.flex-wrap(@value:wrap){-webkit-flex-wrap: @value;-ms-flex-wrap: @value;flex-wrap: @value;
+  //手机上不支持换行,所以只好舍弃flex布局了 fuck ta
+  @media (max-width:@screen-phone){&{display: block;&>*{float:left;};.clearfix();}}}
+//flex-direction:row, row-reverse, column, column-reverse;
+.flex-direction(@value:row){-webkit-flex-direction: @value;-ms-flex-direction: @value;flex-direction: @value;}
+//align-items:flex-start, flex-end, center, baseline, stretch(默认值)
+.align-items(@value:stretch){-webkit-align-items: @value;-ms-flex-align: @value;align-items: @value;}
+//align-content:flex-start, flex-end, center, space-between, space-around, stretch(默认值)
+.align-content(@value:stretch){-webkit-align-content: @value;-ms-flex-line-pack: @value;align-content: @value;}
+//justify-content:flex-start, flex-end, center, space-between, space-around
+.justify-content(@value:stretch){-webkit-justify-content: @value;-ms-flex-pack: @value;justify-content: @value;}
+/**************** 子元素设置 ******************/
+//flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+.flex(@fg:1,@fs:'',@fb:''){-webkit-flex: @fg @fs @fb;-ms-flex: @fg @fs @fb;flex: @fg @fs @fb;}
+//flex-basis属性它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+.flex-basis(@fb){-webkit-flex-basis: @fb;-ms-flex-basis: @fb;flex-basis: @fb;}
+//flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+.flex-grow(@grow:1){-webkit-flex-grow: @grow;-ms-flex-grow: @grow;flex-grow: @grow;}
+//align-self值与align-items值相同
+.align-self(@value:auto){-webkit-align-self: @value;align-self: @value;}
+
+/******************************************** 动画 **************************************************/
+//应用：animation: fadeIn .6s;
+/**************** fade(淡入淡出) ******************/
+// fade in
+@-webkit-keyframes fadeIn{from{opacity:0};to{opacity:1}}
+@keyframes         fadeIn{from{opacity:0};to{opacity:1}}
+//fade out
+@-webkit-keyframes fadeOut{from{opacity:1};to{opacity:0}}
+@keyframes         fadeOut{from{opacity:1};to{opacity:0}}
+
+/**************** slide(滑动) ******************/
+//slide up
+@-webkit-keyframes slideUp{from{-webkit-transform:translate3d(0,100%,0)};to{-webkit-transform:none}}
+@keyframes         slideUp{from{transform:translate3d(0,100%,0)};to{transform:none}}
+// slide down
+@-webkit-keyframes slideDown{from{-webkit-transform:translate3d(0,-100%,0)};to{-webkit-transform:none}}
+@keyframes         slideDown{from{transform:translate3d(0,-100%,0)};to{transform:none}}
+
+// slide in
+@-webkit-keyframes slideInFromLeft{from{opacity:0;-webkit-transform:translate3d(-100%,0,0)};to{opacity:1;-webkit-transform:none}}
+@keyframes         slideInFromLeft{from{opacity:0;transform:translate3d(-100%,0,0)};to{opacity:1;transform:none}}
+
+@-webkit-keyframes slideInFromRight{from{opacity:0;-webkit-transform:translate3d(100%,0,0)};to{opacity:1;-webkit-transform:none}}
+@keyframes         slideInFromRight{from{opacity:0;transform:translate3d(100%,0,0)};to{opacity:1;transform:none}}
+// slide out
+@-webkit-keyframes slideOutToLeft{from{opacity:1;-webkit-transform:none};to{opacity:0;-webkit-transform:translate3d(-100%,0,0)}}
+@keyframes         slideOutToLeft{from{opacity:1;transform:none};to{opacity:0;transform:translate3d(-100%,0,0)}}
+
+@-webkit-keyframes slideOutToRight{from{opacity:1;-webkit-transform:none};to{opacity:0;-webkit-transform:translate3d(100%,0,0)}}
+@keyframes         slideOutToRight{from{opacity:1;transform:none};to{opacity:0;transform:translate3d(100%,0,0)}}
+
+/**************** spin(旋转) ******************/
+@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}
+@keyframes         spin{to{transform:rotate(360deg)}}
+
+/**************** pulse(放大) ******************/
+@-webkit-keyframes pulse{to{transform: scale(1.1)}}
+@keyframes         pulse{to{transform: scale(1.1)}}
+
+/**************** bounce-landing(上下运动) ******************/
+@-webkit-keyframes bounce-landing{0%{transform: translateY(0)};40%{transform: translateY(-28px)};60%{transform: translateY(-3px)}}
+@keyframes        bounce-landing{0%{transform: translateY(0)};40%{transform: translateY(-28px)};60%{transform: translateY(-3px)}}
+
+/**************** 水波动画(需配合waves.js使用) ******************/
+.waves-effect{position:relative;cursor:pointer;display:inline-block;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;vertical-align:middle;z-index:1;will-change:opacity,transform;transition:all .3s ease-out}
+.waves-effect .waves-ripple{position:absolute;border-radius:50%;width:20px;height:20px;margin-top:-10px;margin-left:-10px;opacity:0;background:rgba(0,0,0,.2);transition:all .7s ease-out;transition-property:opacity,-webkit-transform;transition-property:transform,opacity;transition-property:transform,opacity,-webkit-transform;-webkit-transform:scale(0);transform:scale(0);pointer-events:none}
+
+
+/************************************************ 渐变 **********************************************/
+/**************** 水平渐变 ******************/
+.gd-horizontal(@start-color: @base-color; @end-color: #fff; @start-percent: 0%; @end-percent: 100%) {
+  background-image: -webkit-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(left, @start-color @start-percent, @end-color @end-percent); // Opera 12
+  background-image: linear-gradient(to right, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down
+}
+/**************** 垂直渐变 ******************/
+.gd-vertical(@start-color: @base-color; @end-color: #fff; @start-percent: 0%; @end-percent: 100%) {
+  background-image: -webkit-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(top, @start-color @start-percent, @end-color @end-percent);  // Opera 12
+  background-image: linear-gradient(to bottom, @start-color @start-percent, @end-color @end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+  background-repeat: repeat-x;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down
+}
+/**************** 45度角仰望天空 ******************/
+.gd-directional(@start-color: @base-color; @end-color: #fff; @deg: 45deg) {
+  background-repeat: repeat-x;
+  background-image: -webkit-linear-gradient(@deg, @start-color, @end-color); // Safari 5.1-6, Chrome 10+
+  background-image: -o-linear-gradient(@deg, @start-color, @end-color); // Opera 12
+  background-image: linear-gradient(@deg, @start-color, @end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+}
+/**************** 水平三重奏 ******************/
+.gd-horizontal-three-colors(@start-color: @base-color; @mid-color: lighten(@base-color, 10%); @color-stop: 50%; @end-color: #fff) {
+  background-image: -webkit-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+  background-image: -o-linear-gradient(left, @start-color, @mid-color @color-stop, @end-color);
+  background-image: linear-gradient(to right, @start-color, @mid-color @color-stop, @end-color);
+  background-repeat: no-repeat;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+/**************** 垂直三重奏 ******************/
+.gd-vertical-three-colors(@start-color: #00b3ee; @mid-color: #7a43b6; @color-stop: 50%; @end-color: #c3325f) {
+  background-image: -webkit-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+  background-image: -o-linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+  background-image: linear-gradient(@start-color, @mid-color @color-stop, @end-color);
+  background-repeat: no-repeat;
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",argb(@start-color),argb(@end-color))); // IE9 and down, gets no color-stop at all for proper fallback
+}
+/**************** 圆形渐变 ******************/
+.gd-radial(@inner-color: @base-color; @outer-color: #fff) {
+  background-image: -webkit-radial-gradient(circle, @inner-color, @outer-color);
+  background-image: radial-gradient(circle, @inner-color, @outer-color);
+  background-repeat: no-repeat;
+}
+/**************** 条纹渐变 ******************/
+.gd-striped(@color: @base-color; @angle: 45deg) {
+  background-image: -webkit-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+  background-image: linear-gradient(@angle, @color 25%, transparent 25%, transparent 50%, @color 50%, @color 75%, transparent 75%, transparent);
+}
+
+/************************************************ box阴影 **********************************************/
+.z-depth-1{box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);}
+.z-depth-2{box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);}
+.z-depth-3{box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);}
+.z-depth-4{box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);}
+.z-depth-5{box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);}
