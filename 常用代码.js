@@ -1,11 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
 toFixed(2)  //四舍五入保留两位小数
 meta标签 
-	//禁止浏览器识别手机号码
-	<meta name="format-detection" content="telephone=no">
-	//页面适合在移动设备上进行浏览
-    <meta name="applicable-device" content="mobile">
+
 解决数组引用的问题： arr.concat() //数组复制
 获取下拉框值 $("#FinanceCostType").find("option:selected").text();
 获取下拉框索引 $("select[name='select1']").get(0).selectedIndex;
@@ -19,9 +14,6 @@ login_name = encodeURI(encodeURI(login_name));
 2.action中URLDecoder解码
 loginName = java.net.URLDecoder.decode(loginName,"UTF-8"); 
 
-$(".mis-slide").each(function(index){
-    $(this).attr("data-index", index);
-});
 
 //json转意:
 eval("("+data+")")
@@ -31,10 +23,6 @@ $.param(data)
 JSON.parse(str);
 
 JSON.stringify(obj);
-
-JsonConvert.DeserializeObject<VMInfo>(jsonstr)
-
-JsonConvert.SerializeObject(viewModel)
 
 reset: function () {
 	$("#StartTime").val($("#hidStartTime").val());
@@ -53,12 +41,6 @@ $('#loadBtn').trigger("click");
 
 //去除空格
 $.trim($("#AccounId").val());
-
-
-/^((\d*[1-9](.\d{1,2})?)|(0\.\d{1,2}))$/; 
-/^(\d*[0-9](.\d{1,2})?)$/; 
-/(^\d{15}$)|(^\d{17}(\d|X)$)/ 
-/(^0\d{2,3}-?\d{7,8}$)|(^1[0-9]{10}$)/ 
 
 //金钱格式化（加千分号，保留两位小数）
 var money = (money.toFixed(2) + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,'); 
@@ -85,59 +67,38 @@ $(function() {
 	});
 });
 
-error: function (e) {
-layer.alert(e.responseText, true, "?鎭?, function () {
-layer.closeAll();
-});
-}
-
-function checkInfo() {
-var flag = $.compareDate($('#StartClearDate').val(), $('#EndClearDate').val(), 1, "");
-if (flag !== "" & typeof flag !== "undefined") {
-layer.alert(flag);
-return false;
-}
-return true;
-}
-
-
-//Better517na.Core.AsyncInfrastructure.CommonCallHelper.dll
-WcfCallHelper.Instance.Invoke<IUserInfoService, string, bool>(info, "AddCompanyCertificationInfo");
-
-return this.Json(new { Result = result, Error = 0 });
-return this.Json("true|成功");
 
 //表单提交
 var frm = $('#validationLoginForm');
 
 frm.submit(function (e) {
-$.ajax({
-type: frm.attr('method'),
-url: frm.attr('action'),
-data: frm.serialize(),
-success: function (data) {
-alert('ok');
-},
-error:function(data){
-alert(data);
-}
-});
-e.preventDefault();
+	$.ajax({
+		type: frm.attr('method'),
+		url: frm.attr('action'),
+		data: frm.serialize(),
+		success: function (data) {
+			alert('ok');
+		},
+		error:function(data){
+			alert(data);
+		}
+	});
+	e.preventDefault();
 });
 
 
 //表单数据序列化
 serializeJson: function(obj) {
-var jsonObj = {};
+	var jsonObj = {};
 
-$.each(obj, function() {
-var value = $.trim($(this).val());
+	$.each(obj, function() {
+		var value = $.trim($(this).val());
 
-if (value !== '') {
-var key = $(this).attr('name');
-key && (jsonObj[key] = value);
-}
-});
+		if (value !== '') {
+			var key = $(this).attr('name');
+			key && (jsonObj[key] = value);
+		}
+	});
 return jsonObj;
 }
 var objData = $.serializeJson($("#tableCondition").find("select,input[type='text']"));
@@ -156,16 +117,16 @@ alertDiv: function(divID, title) {
 var DomTitle = title ? title : '详细内容';
 
 var layerIndex = $.layer({
-type: 1,
-fix : false,
-offset:['100px',''],
-area : ['auto','auto'],//可以设置具体长宽（自定义层不需要再设置），也可以设置成auto来自适应自定义层长宽
-border : [10 , 0.3 , '#000', true],
-title : [DomTitle, true],
-closeBtn : ['0', true],
-page: {
-dom : '#'+divID
-}
+	type: 1,
+	fix : false,
+	offset:['100px',''],
+	area : ['auto','auto'],//可以设置具体长宽（自定义层不需要再设置），也可以设置成auto来自适应自定义层长宽
+	border : [10 , 0.3 , '#000', true],
+	title : [DomTitle, true],
+	closeBtn : ['0', true],
+	page: {
+		dom : '#'+divID
+	}
 });
 return layerIndex;
 },
@@ -283,7 +244,7 @@ document.ontouchstart=function(){
   return false;
 }
 
-获取鼠标坐标：
+//获取鼠标坐标：
 function getMousePos(event) {
 	var e = event || window.event;
 	var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;
@@ -296,3 +257,41 @@ onmousemove="getMousePos(event)"
 getMousePos(e).x
 getMousePos(e).y
 
+
+/**
+ * 复制文本
+ * @param id 复制节点Id   该节点不能隐藏
+ */
+function copyText(id){
+    //获取节点
+    var n = $("#" + id);
+    if(n == null){
+        //节点为空直接返回
+        return;
+    }
+    try {
+        //取得浏览器的userAgent字符串
+        var userAgent = navigator.userAgent;
+        //判断Ie
+        if (userAgent.indexOf("MSIE") > 0){
+            window.clipboardData.setData('text', n.val());
+            var copyContent = window.clipboardData.getData("text");
+            //判断复制成功，ie复制可选择是否允许
+            if(copyContent == n.val()){
+                alert("复制成功。现在您可以粘贴（Ctrl+v）到Blog 或BBS中了。");
+                return;
+            }
+        }else{
+            n.select();
+            therange = void 0;
+            if (n.createTextRange) therange = n.createTextRange();
+            therange = therange ? therange : document;
+            if (therange.execCommand("Copy")) {
+                alert("复制成功。现在您可以粘贴（Ctrl+v）到Blog 或BBS中了。");
+                return;
+            }
+        }
+    } catch (i) {
+    }
+    alert("您使用的浏览器不支持此复制功能，请使用Ctrl+C或鼠标右键。");
+}

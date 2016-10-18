@@ -1,4 +1,9 @@
 name:															content
+
+
+//页面适合在移动设备上进行浏览
+applicable-device   											mobile,pc
+
 //删除默认的苹果工具栏和菜单栏
 apple-mobile-web-app-capable       								yes/no
 
@@ -18,3 +23,7 @@ x5-orientation（横竖屏控制）									landscape（横屏）/portrait（竖屏）/auto
 
 //杂项
 author
+
+//no-siteapp和no-transform，是告诉搜索引擎不要把网页转码
+<meta http-equiv="Cache-Control" content="no-transform" /> 
+<meta http-equiv="Cache-Control" content="no-siteapp" />
