@@ -1,58 +1,58 @@
-ÅäÖÃÓÃ»§ÃûºÍÓÊÏä£º(globalÑ¡ÏîËùÓĞÏîÄ¿Ä¬ÈÏÊ¹ÓÃÓÃ»§ĞÅÏ¢)
+ï»¿é…ç½®ç”¨æˆ·åå’Œé‚®ç®±ï¼š(globalé€‰é¡¹æ‰€æœ‰é¡¹ç›®é»˜è®¤ä½¿ç”¨ç”¨æˆ·ä¿¡æ¯)
 git config --global user.name "Jion-e"
 git config --global user.email maywzp@foxmail.com
 
-²é¿´ÅäÖÃĞÅÏ¢£º
+æŸ¥çœ‹é…ç½®ä¿¡æ¯ï¼š
 git config --list
 
-²é¿´Ä³¸ö»·¾³±äÁ¿£º
+æŸ¥çœ‹æŸä¸ªç¯å¢ƒå˜é‡ï¼š
 git config user.name
 
-»ù±¾²Ù×÷£º
-³õÊ¼»¯git²Ö¿â£º
+åŸºæœ¬æ“ä½œï¼š
+åˆå§‹åŒ–gitä»“åº“ï¼š
 git init
 
-Ìí¼ÓÎÄ¼şµ½»º´æ£º
+æ·»åŠ æ–‡ä»¶åˆ°ç¼“å­˜ï¼š
 git add .  
 git add README
 
-²é¿´ÏîÄ¿×´Ì¬£º
+æŸ¥çœ‹é¡¹ç›®çŠ¶æ€ï¼š
 git status -s
-A(Ìí¼ÓÎÄ¼ş)
-AM(Ìí¼Ó²¢ĞŞ¸Ä)
-D(É¾³ı)
+A(æ·»åŠ æ–‡ä»¶)
+AM(æ·»åŠ å¹¶ä¿®æ”¹)
+D(åˆ é™¤)
 
-¶Ô±ÈĞŞ¸Ä£º
+å¯¹æ¯”ä¿®æ”¹ï¼š
 git diff README
 
-½«»º´æÇøµÄÄÚÈİÌí¼Óµ½²Ö¿âÖĞ£º
-git commit -m '×¢ÊÍ'
+å°†ç¼“å­˜åŒºçš„å†…å®¹æ·»åŠ åˆ°ä»“åº“ä¸­ï¼š
+git commit -m 'æ³¨é‡Š'
 
-git addÓëgit commit½áºÏ£º
+git addä¸git commitç»“åˆï¼š
 git commit -a
 
-È¡ÏûÒÑ»º´æÎÄ¼ş£º
+å–æ¶ˆå·²ç¼“å­˜æ–‡ä»¶ï¼š
 git reset HEAD --README
 
-É¾³ıÎÄ¼ş£º
-git rm (»º´æÇøºÍÓ²ÅÌ¶¼É¾³ı)
-git rm --cached (Ö»ÊÇ»º´æÇøÉ¾³ı)
+åˆ é™¤æ–‡ä»¶ï¼š
+git rm (ç¼“å­˜åŒºå’Œç¡¬ç›˜éƒ½åˆ é™¤)
+git rm --cached (åªæ˜¯ç¼“å­˜åŒºåˆ é™¤)
 
-ÎÄ¼şÖØÃüÃû£º
+æ–‡ä»¶é‡å‘½åï¼š
 git mv README README-RM
 
-Á´½Ógithub×÷ÎªÔ¶³Ì²Ö¿â£º
-1.Éú²ússh key:  ssh-keygen -t rsa -C "maywzp@foxmail.com" (Éú²úµÄÎÄ¼şÔÚC:\Users\Administrator\.sshÀï)
-2.ÔÚgithubµÄSSH KeysÀïÌí¼Óid_rsa.pubÎÄ¼şÀïµÄĞÅÏ¢
-3.ÑéÖ¤ÊÇ·ñ³É¹¦£º ssh -T git@github.com
-4.githubÖĞ´´½¨ĞÂ²Ö¿â
+é“¾æ¥githubä½œä¸ºè¿œç¨‹ä»“åº“ï¼š
+1.ç”Ÿäº§ssh key:  ssh-keygen -t rsa -C "maywzp@foxmail.com" (ç”Ÿäº§çš„æ–‡ä»¶åœ¨C:\Users\Administrator\.sshé‡Œ)
+2.åœ¨githubçš„SSH Keysé‡Œæ·»åŠ id_rsa.pubæ–‡ä»¶é‡Œçš„ä¿¡æ¯
+3.éªŒè¯æ˜¯å¦æˆåŠŸï¼š ssh -T git@github.com
+4.githubä¸­åˆ›å»ºæ–°ä»“åº“
 
-5.½«±¾µØ²Ö¿âÍÆËÍµ½Ô¶³Ì²Ö¿â£º 
-git remote add origin https://github.com/Jion-e/firstblood.git (Ô¶³Ì²Ö¿âÃû)
+5.å°†æœ¬åœ°ä»“åº“æ¨é€åˆ°è¿œç¨‹ä»“åº“ï¼š 
+git remote add origin https://github.com/Jion-e/firstblood.git (è¿œç¨‹ä»“åº“å)
 git push -u origin master
 
-»ò£º
-6:½«Ô¶³Ì²Ö¿âÇ¨ÒÆµ½±¾µØ£º
+æˆ–ï¼š
+6:å°†è¿œç¨‹ä»“åº“è¿ç§»åˆ°æœ¬åœ°ï¼š
 cd myWeb
 echo "# firstblood" >> README.md
 git init
@@ -61,9 +61,9 @@ git commit -m "first commit"
 git remote add origin https://github.com/Jion-e/firstblood.git
 git push -u origin master
 
-²é¿´µ±Ç°ÅäÖÃµÄÔ¶³Ì²Ö¿â£º
+æŸ¥çœ‹å½“å‰é…ç½®çš„è¿œç¨‹ä»“åº“ï¼š
 git remote -v
 
-±¾µØ»ñÈ¡Ô¶³Ì²Ö¿âµÄ¸üĞÂ£º
-git fetch origin  (²é¿´ÊÇ·ñÓĞ¸üĞÂ)
-git merge origin/master (½«¸üĞÂÍ¬²½µ½±¾µØ)
+æœ¬åœ°è·å–è¿œç¨‹ä»“åº“çš„æ›´æ–°ï¼š
+git fetch origin  (æŸ¥çœ‹æ˜¯å¦æœ‰æ›´æ–°)
+git merge origin/master (å°†æ›´æ–°åŒæ­¥åˆ°æœ¬åœ°)

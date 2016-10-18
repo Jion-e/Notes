@@ -1,29 +1,29 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ï»¿<%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-toFixed(2)  //ËÄÉáÎåÈë±£ÁôÁ½Î»Ğ¡Êı
-meta±êÇ© 
-	//½ûÖ¹ä¯ÀÀÆ÷Ê¶±ğÊÖ»úºÅÂë
+toFixed(2)  //å››èˆäº”å…¥ä¿ç•™ä¸¤ä½å°æ•°
+metaæ ‡ç­¾ 
+	//ç¦æ­¢æµè§ˆå™¨è¯†åˆ«æ‰‹æœºå·ç 
 	<meta name="format-detection" content="telephone=no">
-	//Ò³ÃæÊÊºÏÔÚÒÆ¶¯Éè±¸ÉÏ½øĞĞä¯ÀÀ
+	//é¡µé¢é€‚åˆåœ¨ç§»åŠ¨è®¾å¤‡ä¸Šè¿›è¡Œæµè§ˆ
     <meta name="applicable-device" content="mobile">
-½â¾öÊı×éÒıÓÃµÄÎÊÌâ£º arr.concat() //Êı×é¸´ÖÆ
-»ñÈ¡ÏÂÀ­¿òÖµ $("#FinanceCostType").find("option:selected").text();
-»ñÈ¡ÏÂÀ­¿òË÷Òı $("select[name='select1']").get(0).selectedIndex;
+è§£å†³æ•°ç»„å¼•ç”¨çš„é—®é¢˜ï¼š arr.concat() //æ•°ç»„å¤åˆ¶
+è·å–ä¸‹æ‹‰æ¡†å€¼ $("#FinanceCostType").find("option:selected").text();
+è·å–ä¸‹æ‹‰æ¡†ç´¢å¼• $("select[name='select1']").get(0).selectedIndex;
 
-×èÖ¹Ä¬ÈÏÊÂ¼ş e.preventDefault();
-×èÖ¹ÊÂ¼şÃ°Åİ e.stopPropagation();
+é˜»æ­¢é»˜è®¤äº‹ä»¶ e.preventDefault();
+é˜»æ­¢äº‹ä»¶å†’æ³¡ e.stopPropagation();
  
-//×ªÂë£º
-1.jsÎÄ¼şÖĞÊ¹ÓÃencodeURI()·½·¨(±ØĞëÌ×Á½²ã)¡£
+//è½¬ç ï¼š
+1.jsæ–‡ä»¶ä¸­ä½¿ç”¨encodeURI()æ–¹æ³•(å¿…é¡»å¥—ä¸¤å±‚)ã€‚
 login_name = encodeURI(encodeURI(login_name));  
-2.actionÖĞURLDecoder½âÂë
+2.actionä¸­URLDecoderè§£ç 
 loginName = java.net.URLDecoder.decode(loginName,"UTF-8"); 
 
 $(".mis-slide").each(function(index){
     $(this).attr("data-index", index);
 });
 
-//json×ªÒâ:
+//jsonè½¬æ„:
 eval("("+data+")")
 			
 $.param(data) 
@@ -48,10 +48,10 @@ reset: function () {
 	});
 },
 
-//×Ô¶¯´¥·¢ÊÂ¼ş
+//è‡ªåŠ¨è§¦å‘äº‹ä»¶
 $('#loadBtn').trigger("click");
 
-//È¥³ı¿Õ¸ñ
+//å»é™¤ç©ºæ ¼
 $.trim($("#AccounId").val());
 
 
@@ -60,7 +60,7 @@ $.trim($("#AccounId").val());
 /(^\d{15}$)|(^\d{17}(\d|X)$)/ 
 /(^0\d{2,3}-?\d{7,8}$)|(^1[0-9]{10}$)/ 
 
-//½ğÇ®¸ñÊ½»¯£¨¼ÓÇ§·ÖºÅ£¬±£ÁôÁ½Î»Ğ¡Êı£©
+//é‡‘é’±æ ¼å¼åŒ–ï¼ˆåŠ åƒåˆ†å·ï¼Œä¿ç•™ä¸¤ä½å°æ•°ï¼‰
 var money = (money.toFixed(2) + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&,'); 
 
 window.history.go(-1):
@@ -71,10 +71,10 @@ history.back()
 
 window.location.reload();
 
-//ºóÍË²¢Ë¢ĞÂÒ³Ãæ£º
-self.location=document.referrer; (·µ»Øµ¼º½µ½µ±Ç°ÍøÒ³µÄ³¬Á´½ÓËùÔÚÍøÒ³µÄURL)
+//åé€€å¹¶åˆ·æ–°é¡µé¢ï¼š
+self.location=document.referrer; (è¿”å›å¯¼èˆªåˆ°å½“å‰ç½‘é¡µçš„è¶…é“¾æ¥æ‰€åœ¨ç½‘é¡µçš„URL)
 
-¸´Ñ¡¿òÈ«Ñ¡
+å¤é€‰æ¡†å…¨é€‰
 $(function() {
 	$("#checkAll").click(function() {
 		$('input[name="subBox"]').attr("checked",this.checked); 
@@ -86,7 +86,7 @@ $(function() {
 });
 
 error: function (e) {
-layer.alert(e.responseText, true, "?æ?, function () {
+layer.alert(e.responseText, true, "?é­?, function () {
 layer.closeAll();
 });
 }
@@ -105,9 +105,9 @@ return true;
 WcfCallHelper.Instance.Invoke<IUserInfoService, string, bool>(info, "AddCompanyCertificationInfo");
 
 return this.Json(new { Result = result, Error = 0 });
-return this.Json("true|³É¹¦");
+return this.Json("true|æˆåŠŸ");
 
-//±íµ¥Ìá½»
+//è¡¨å•æäº¤
 var frm = $('#validationLoginForm');
 
 frm.submit(function (e) {
@@ -126,7 +126,7 @@ e.preventDefault();
 });
 
 
-//±íµ¥Êı¾İĞòÁĞ»¯
+//è¡¨å•æ•°æ®åºåˆ—åŒ–
 serializeJson: function(obj) {
 var jsonObj = {};
 
@@ -144,22 +144,22 @@ var objData = $.serializeJson($("#tableCondition").find("select,input[type='text
 
 queryCon: JSON.stringify(objData),
 
-//»ñÈ¡ URL ÖĞ´«µİµÄ²ÎÊı  
+//è·å– URL ä¸­ä¼ é€’çš„å‚æ•°  
 $.urlParam = function(name){
     var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (!results) { return 0; }
     return results[1] || 0;
 }
 
-//alertµ¯³ö²ã£º
+//alertå¼¹å‡ºå±‚ï¼š
 alertDiv: function(divID, title) {
-var DomTitle = title ? title : 'ÏêÏ¸ÄÚÈİ';
+var DomTitle = title ? title : 'è¯¦ç»†å†…å®¹';
 
 var layerIndex = $.layer({
 type: 1,
 fix : false,
 offset:['100px',''],
-area : ['auto','auto'],//¿ÉÒÔÉèÖÃ¾ßÌå³¤¿í£¨×Ô¶¨Òå²ã²»ĞèÒªÔÙÉèÖÃ£©£¬Ò²¿ÉÒÔÉèÖÃ³ÉautoÀ´×ÔÊÊÓ¦×Ô¶¨Òå²ã³¤¿í
+area : ['auto','auto'],//å¯ä»¥è®¾ç½®å…·ä½“é•¿å®½ï¼ˆè‡ªå®šä¹‰å±‚ä¸éœ€è¦å†è®¾ç½®ï¼‰ï¼Œä¹Ÿå¯ä»¥è®¾ç½®æˆautoæ¥è‡ªé€‚åº”è‡ªå®šä¹‰å±‚é•¿å®½
 border : [10 , 0.3 , '#000', true],
 title : [DomTitle, true],
 closeBtn : ['0', true],
@@ -173,7 +173,7 @@ return layerIndex;
 var LAYLER;
 LAYLER = comm.alertDiv('editChuTime');
 
-// Ìí¼ÓÊÕ²Ø¼Ğ
+// æ·»åŠ æ”¶è—å¤¹
 function addFavorite(url, title) {
 	if (document.all) {
 		window.external.addFavorite(url, title);
@@ -182,7 +182,7 @@ function addFavorite(url, title) {
 	}
 }
 
-// html×Ö·û´®×ªÒå
+// htmlå­—ç¬¦ä¸²è½¬ä¹‰
 function htmlEscape(htmlString) {
 	htmlString = htmlString.replace(/&/g, '&amp;');
 	htmlString = htmlString.replace(/</g, '&lt;');
@@ -193,13 +193,13 @@ function htmlEscape(htmlString) {
 	return htmlString;
 }
 
-// ÉèÖÃCookie
+// è®¾ç½®Cookie
 function setCookie(name, value) {
 	var expires = (arguments.length > 2) ? arguments[2] : null;
 	document.cookie = name + "=" + encodeURIComponent(value) + ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + ";path=" + window.location.href;
 }
 
-// »ñÈ¡Cookie
+// è·å–Cookie
 function getCookie(name) {
 	var value = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
 	if (value != null) {
@@ -209,14 +209,14 @@ function getCookie(name) {
 	}
 }
 
-// É¾³ıcookie
+// åˆ é™¤cookie
 function removeCookie(name) {
 	var expires = new Date();
 	expires.setTime(expires.getTime() - 1000 * 60);
 	setCookie(name, "", expires);
 }
 
-//·µ»Ø¶¥²¿
+//è¿”å›é¡¶éƒ¨
  // fade in .back-to-top
 $(window).scroll(function () {
 	if ($(this).scrollTop() > 500) {
@@ -235,7 +235,7 @@ $('.back-to-top').click(function () {
 	return false;
 });   
 
-//ÅĞ¶ÏÊÇ·ñÎªpcä¯ÀÀÆ÷
+//åˆ¤æ–­æ˜¯å¦ä¸ºpcæµè§ˆå™¨
 function isPc() { 
     var userAgentInfo = navigator.userAgent;
     var Agents = ["Android", "iPhone",
@@ -250,7 +250,7 @@ function isPc() {
     }
     return flag;
 }
-//ÅĞ¶ÏÊÇ·ñÎªÊÖ»úä¯ÀÀÆ÷»òipadä¯ÀÀÆ÷
+//åˆ¤æ–­æ˜¯å¦ä¸ºæ‰‹æœºæµè§ˆå™¨æˆ–ipadæµè§ˆå™¨
 function isMobile() {
     var sUserAgent = navigator.userAgent.toLowerCase();
     var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
@@ -268,7 +268,7 @@ function isMobile() {
 	return flag;
 }
 
-//ÅĞ¶ÏÊÇ·ñÎªÎ¢ĞÅä¯ÀÀÆ÷
+//åˆ¤æ–­æ˜¯å¦ä¸ºå¾®ä¿¡æµè§ˆå™¨
 function isWeiXin(){ 
 	var ua = navigator.userAgent.toLowerCase(); 
 	if(ua.match(/MicroMessenger/i) == 'micromessenger'){ 
@@ -278,12 +278,12 @@ function isWeiXin(){
 	} 
 } 
 
-//×èÖ¹Ò³Ãæ¹ö¶¯
+//é˜»æ­¢é¡µé¢æ»šåŠ¨
 document.ontouchstart=function(){
   return false;
 }
 
-»ñÈ¡Êó±ê×ø±ê£º
+è·å–é¼ æ ‡åæ ‡ï¼š
 function getMousePos(event) {
 	var e = event || window.event;
 	var scrollX = document.documentElement.scrollLeft || document.body.scrollLeft;

@@ -1,20 +1,20 @@
-name:															content
-//É¾³ıÄ¬ÈÏµÄÆ»¹û¹¤¾ßÀ¸ºÍ²Ëµ¥À¸
+ï»¿name:															content
+//åˆ é™¤é»˜è®¤çš„è‹¹æœå·¥å…·æ å’Œèœå•æ 
 apple-mobile-web-app-capable       								yes/no
 
-//¶¥²¿¿ØÖÆ×´Ì¬À¸ÏÔÊ¾ÑùÊ½
+//é¡¶éƒ¨æ§åˆ¶çŠ¶æ€æ æ˜¾ç¤ºæ ·å¼
 apple-mobile-web-app-status-bar-style							status-bar-style:black/status-bar-style:black-translucent
 
-//¸ñÊ½¼ì²â
-format-detection												telephone=no/email=no/adress=no£¨½ûÖ¹Ìø×ªÖÁµØÍ¼£©
+//æ ¼å¼æ£€æµ‹
+format-detection												telephone=no/email=no/adress=noï¼ˆç¦æ­¢è·³è½¬è‡³åœ°å›¾ï¼‰
 
-//ucÇ¿ÖÆÈ«ÆÁ
+//ucå¼ºåˆ¶å…¨å±
 full-screen														yes/no
 
-//QQä¯ÀÀÆ÷x5ÄÚºË
-x5-page-mode£¨Ò³ÃæÄ£Ê½£©										app£¨ÍøÒ³Ó¦ÓÃÄ£Ê½£¨¶¨ÖÆ¹¤¾ßÀ¸£¬È«ÆÁÏÔÊ¾£©£©/default
-x5-fullscreen£¨Ç¿ÖÆÈ«ÆÁ£©										true/auto
-x5-orientation£¨ºáÊúÆÁ¿ØÖÆ£©									landscape£¨ºáÆÁ£©/portrait£¨ÊúÆÁ£©/auto
+//QQæµè§ˆå™¨x5å†…æ ¸
+x5-page-modeï¼ˆé¡µé¢æ¨¡å¼ï¼‰										appï¼ˆç½‘é¡µåº”ç”¨æ¨¡å¼ï¼ˆå®šåˆ¶å·¥å…·æ ï¼Œå…¨å±æ˜¾ç¤ºï¼‰ï¼‰/default
+x5-fullscreenï¼ˆå¼ºåˆ¶å…¨å±ï¼‰										true/auto
+x5-orientationï¼ˆæ¨ªç«–å±æ§åˆ¶ï¼‰									landscapeï¼ˆæ¨ªå±ï¼‰/portraitï¼ˆç«–å±ï¼‰/auto
 
-//ÔÓÏî
+//æ‚é¡¹
 author

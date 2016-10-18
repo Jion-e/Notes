@@ -1,0 +1,38 @@
+Atom
+
+快捷键：
+
+Ctrl+N 创建文件
+
+文件搜索：
+Ctrl+T 搜索目录中的文件
+Ctrl+B 搜索一个当前打开的文件 
+Ctrl+Shift+B 来搜索一个新建的或更改过的文件
+
+
+保存：
+另存为: Ctrl+Shift+S 
+保存所有文件: Ctrl+Alt+S
+
+编辑：
+Ctrl+Shift+U 文件编码
+Ctrl+L: 选中当前行
+Ctrl+J: 将下一行接到当前行尾
+Ctrl+Up/Ctrl+Down: 将当前行向上/下移动一行
+
+Ctrl+Shift+K: 删除当前行
+按住Ctrl： 多光标选择
+
+Ctrl+Alt+[和Ctrl+Alt+]  折叠或展开代码 
+
+Ctrl+Alt+ K 格式化
+
+查找：
+
+alt-shift-S 查看当前可用代码片段
+Ctrl+Shift+f 查找整个项目
+
+ctrl-shift-M Markdown预览
+
+ctrl+z
+ctrl+Y

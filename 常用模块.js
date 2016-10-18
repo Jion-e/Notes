@@ -1,27 +1,27 @@
-·ÖÒ³
+ï»¿åˆ†é¡µ
 $.pagination({
 url: "/ReconciliationCenter/QueryUserReport",
 data: { "accountID": AccountID, "startTime": StartTime, "endTime": EndTime },
 type: "post",
 updateId: "cacheTable",
 templateId: "cacheTemp",
-callBack: function (data) { // »Øµ÷º¯Êı£¬¸ñÊ½»¯Êı¾İ
+callBack: function (data) { // å›è°ƒå‡½æ•°ï¼Œæ ¼å¼åŒ–æ•°æ®
 if (data.code === 4) {
 layer.alert(data.message);
 return;
 }
 }
-pagerSuccess: function(){} // ·ÖÒ³°ó¶¨Êı¾İ³É¹¦»Øµ÷º¯Êı
+pagerSuccess: function(){} // åˆ†é¡µç»‘å®šæ•°æ®æˆåŠŸå›è°ƒå‡½æ•°
 )}
 
-// layer ¼ÓÔØ²ã
+// layer åŠ è½½å±‚
 beforeSend: function () {
-layer.load(0, 2, true, "ÉêÇëÖĞ");
+layer.load(0, 2, true, "ç”³è¯·ä¸­");
 },
-// ¹Ø±Õloding²ã
+// å…³é—­lodingå±‚
 layer.loadClose();
 
-jqueryÄ£¿é»¯
+jqueryæ¨¡å—åŒ–
 ;(function(win) {
     win.page = {
         initPage: function() {
@@ -36,7 +36,7 @@ jqueryÄ£¿é»¯
     });
 }(window));
 
-jqueryÀ©Õ¹
+jqueryæ‰©å±•
 (function($){
 	 $.extend({
 		 serializeJson: function(obj) {
@@ -55,7 +55,7 @@ jqueryÀ©Õ¹
 	 })
 })(jQuery)
 
-seajsÄ£¿é»¯
+seajsæ¨¡å—åŒ–
 define(function(require, exports, module){
 var mainMoudle = {
 initEvent: function(){
@@ -73,7 +73,7 @@ mainMoudle.main();
 });
 })
 
-vue£º
+vueï¼š
 import comA from './components/comA.vue'
 import comB from './components/comB.vue'
 export default {
@@ -105,9 +105,9 @@ export default {
 	}
 }
 
-»ñÈ¡¿çÒ³ÃæÊı¾İ
-ÒıÓÃ£ºcommonFunction.jsÎÄ¼ş
-ÆäËûÒ³Ãæ´«Êı¾İ£º<a href="/FinanceExpense/ExpenseCheck?k={{:KeyID}}&u={{:BankReceiptAddress}}&a={{:AddTime}}&t=1">²é¿´</a>
+è·å–è·¨é¡µé¢æ•°æ®
+å¼•ç”¨ï¼šcommonFunction.jsæ–‡ä»¶
+å…¶ä»–é¡µé¢ä¼ æ•°æ®ï¼š<a href="/FinanceExpense/ExpenseCheck?k={{:KeyID}}&u={{:BankReceiptAddress}}&a={{:AddTime}}&t=1">æŸ¥çœ‹</a>
 globalData: {
 keyID: $.queryString('k'),
 addTime: $.queryString('a'),
@@ -117,10 +117,10 @@ type: $.queryString('t')
 
 bootstrap-js
 Modal:
-µ÷ÓÃ£º
+è°ƒç”¨ï¼š
 <button type="button" data-toggle="modal" data-target="#exampleModal">Launch modal</button>
-»ò$('#exampleModal').modal(options)
-µ¯³öÄÚÈİ:<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">...</div>
+æˆ–$('#exampleModal').modal(options)
+å¼¹å‡ºå†…å®¹:<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">...</div>
 
 
 exports.types = {
@@ -190,10 +190,10 @@ return gson.toJson(res);
 
 }
 
-jquery validation±íµ¥ÑéÖ¤
+jquery validationè¡¨å•éªŒè¯
 $.validator.setDefaults({
     submitHandler: function() {
-      alert("Ìá½»ÊÂ¼ş!");
+      alert("æäº¤äº‹ä»¶!");
     }
 });
 $().ready(function() {

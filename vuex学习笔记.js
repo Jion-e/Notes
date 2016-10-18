@@ -1,17 +1,17 @@
-vuexÊ¹ÓÃ£º
-//×¢ÒâÊÂÏî
-×é¼şÓÀÔ¶²»Ó¦¸ÃÖ±½Ó¸Ä±äVuex storeµÄ×´Ì¬£¬Ö»ÄÜ¶ÁÈ¡×´Ì¬
-mutation±ØĞëÊÇÍ¬²½º¯Êı
-mutationµÚÒ»¸ö²ÎÊıÎªstate£¬ÆäËûµÄ²ÎÊı³ÆÎªpayload
-actionµÚÒ»¸ö²ÎÊıÎªstore
-µ±Ìí¼ÓÒ»¸ö²»´æÔÚµÄÊôĞÔÊ±£¬ĞèÒª£º
-1£ºÊ¹ÓÃVue.set(obj, 'newProp', 123);
-2£ºstate.obj = {...state.obj, newProp: 123}
+ï»¿vuexä½¿ç”¨ï¼š
+//æ³¨æ„äº‹é¡¹
+ç»„ä»¶æ°¸è¿œä¸åº”è¯¥ç›´æ¥æ”¹å˜Vuex storeçš„çŠ¶æ€ï¼Œåªèƒ½è¯»å–çŠ¶æ€
+mutationå¿…é¡»æ˜¯åŒæ­¥å‡½æ•°
+mutationç¬¬ä¸€ä¸ªå‚æ•°ä¸ºstateï¼Œå…¶ä»–çš„å‚æ•°ç§°ä¸ºpayload
+actionç¬¬ä¸€ä¸ªå‚æ•°ä¸ºstore
+å½“æ·»åŠ ä¸€ä¸ªä¸å­˜åœ¨çš„å±æ€§æ—¶ï¼Œéœ€è¦ï¼š
+1ï¼šä½¿ç”¨Vue.set(obj, 'newProp', 123);
+2ï¼šstate.obj = {...state.obj, newProp: 123}
 
 
 
-/*** state(×´Ì¬/Êı¾İ) ***/
-//¸ù×é¼şÒıÈëstoreÊµÀı
+/*** state(çŠ¶æ€/æ•°æ®) ***/
+//æ ¹ç»„ä»¶å¼•å…¥storeå®ä¾‹
 import Vue from 'vue'
 import Vuex from 'vuex'
 import store from './store'
@@ -25,19 +25,19 @@ var app = new Vue({
 	components: {MyComponent}
 })
 
-//×Ó×é¼şÍ¨¹ıvuex.getter·½·¨¶ÁÈ¡Êı¾İ
+//å­ç»„ä»¶é€šè¿‡vuex.getteræ–¹æ³•è¯»å–æ•°æ®
 export default {
 	data(){...},
 	vuex:{
 		getters: {
 			count: function(state){   		   => 				 count: state => state.count	
-				return state.count   		(es6Ğ´·¨)
+				return state.count   		(es6å†™æ³•)
 			}
 		}
 	}
 }
-×¢£ºÔÚgetterÖĞÎŞ·¨Ê¹ÓÃthis¹Ø¼ü×Ö,Èç¹ûĞèÒªthis,ĞèÒªÁíÍâµ¥¿ªÒ»¸ö¼ÆËãÊôĞÔ¡£
-Àı£º
+æ³¨ï¼šåœ¨getterä¸­æ— æ³•ä½¿ç”¨thiså…³é”®å­—,å¦‚æœéœ€è¦this,éœ€è¦å¦å¤–å•å¼€ä¸€ä¸ªè®¡ç®—å±æ€§ã€‚
+ä¾‹ï¼š
 vuex: {
 	getters: {
 		currentId: state => state.currentId
@@ -49,7 +49,7 @@ computed: {
 	}
 }
 
-getterÖĞµÄ¹ıÂËÆ÷ÔËÓÃ£º
+getterä¸­çš„è¿‡æ»¤å™¨è¿ç”¨ï¼š
 vuex: {
 	getters: {
 		filteredMessages: state => {
@@ -60,7 +60,7 @@ vuex: {
 	}
 }
 
-¶à×é¼ş¹²Ïígetterº¯Êı£º
+å¤šç»„ä»¶å…±äº«getterå‡½æ•°ï¼š
 //getters.js
 export function filteredMessages(state){
 	reutrn state.message.filter(message => {
@@ -68,7 +68,7 @@ export function filteredMessages(state){
 	})
 }
 
-//×é¼şÖĞ
+//ç»„ä»¶ä¸­
 import { filteredMessages } from './getters'
 export default{
 	vuex: {
@@ -80,35 +80,35 @@ export default{
 
 
 
-/*** Mutations(Òì±ä/ÊÂ¼ş) ***/
-Mutations ±¾ÖÊÊÇÒ»¸öÊÂ¼şÏµÍ³£ºÃ¿¸ömutation¶¼ÓĞÒ»¸öÊÂ¼şÃûºÍÒ»¸ö»Øµ÷º¯Êı£¬ÈÎºÎÒ»¸öMutation handlerµÄµÚÒ»¸ö²ÎÊıÓÀÔ¶ÎªËùÊôstoreµÄÕû¸östate¶ÔÏó£º
-//×¢²ámutations
+/*** Mutations(å¼‚å˜/äº‹ä»¶) ***/
+Mutations æœ¬è´¨æ˜¯ä¸€ä¸ªäº‹ä»¶ç³»ç»Ÿï¼šæ¯ä¸ªmutationéƒ½æœ‰ä¸€ä¸ªäº‹ä»¶åå’Œä¸€ä¸ªå›è°ƒå‡½æ•°ï¼Œä»»ä½•ä¸€ä¸ªMutation handlerçš„ç¬¬ä¸€ä¸ªå‚æ•°æ°¸è¿œä¸ºæ‰€å±storeçš„æ•´ä¸ªstateå¯¹è±¡ï¼š
+//æ³¨å†Œmutations
 import Vuex from 'vuex'
 const store = new Vuex.Store({
 	state: {
 		count: 1,
 	},
 	mutations: {
-		INCREMENT (state){  //mutation È«²¿´óĞ´ÃüÃû
-			//¸Ä±ästate
+		INCREMENT (state){  //mutation å…¨éƒ¨å¤§å†™å‘½å
+			//æ”¹å˜state
 			state.count++
 		}
 	}
 })	
 
-//µ÷ÓÃmutation handle
+//è°ƒç”¨mutation handle
 store.dispatch('INCREMENT')
 
-//´ø²ÎÊıµÄdispatch
+//å¸¦å‚æ•°çš„dispatch
 mutations: {
 	INCREMENT(state, n){
 		state.count += n
 	}
 }
-store.dispatch('INCREMENT', 10) //ËùÓĞµÄ¶îÍâ²ÎÊı³ÆÎª¸ÃmutationµÄpayload£¨ÓĞĞ§¸ºÔØ£©
+store.dispatch('INCREMENT', 10) //æ‰€æœ‰çš„é¢å¤–å‚æ•°ç§°ä¸ºè¯¥mutationçš„payloadï¼ˆæœ‰æ•ˆè´Ÿè½½ï¼‰
 
-ÁíÍâ£º
-Ê¹ÓÃ³£ÁÁÈ¥ÃüÃûÒ»¸ömutation£¬²¢°ÑÕâĞ©³£ÁÁ·ÅÔÚµ¥¶ÀµÄµØ·½
+å¦å¤–ï¼š
+ä½¿ç”¨å¸¸äº®å»å‘½åä¸€ä¸ªmutationï¼Œå¹¶æŠŠè¿™äº›å¸¸äº®æ”¾åœ¨å•ç‹¬çš„åœ°æ–¹
 //mutation-types.js
 export const SOME_MUTATION = 'SOME_MUTATION'
 
@@ -125,30 +125,30 @@ const store = new Vuex.Store({
 	}
 })
 
-/*** action(»î¶¯/·Ö·¢) ***/
-actionÓÃÓÚ·Ö·¢mutationsµÄº¯Êı£¬Ö´ĞĞÒì²½²Ù×÷£¬µÚÒ»¸ö²ÎÊıÎªstoreÊµÀı
-//×î¼òµ¥µÄaction
+/*** action(æ´»åŠ¨/åˆ†å‘) ***/
+actionç”¨äºåˆ†å‘mutationsçš„å‡½æ•°ï¼Œæ‰§è¡Œå¼‚æ­¥æ“ä½œï¼Œç¬¬ä¸€ä¸ªå‚æ•°ä¸ºstoreå®ä¾‹
+//æœ€ç®€å•çš„action
 function increment(store){
 	store.dispatch('INCREMENT')
 }
 
-//´ø¸½¼Ó²ÎÊıµÄaction£¬Ê¹ÓÃes6²ÎÊı½â¹¹
+//å¸¦é™„åŠ å‚æ•°çš„actionï¼Œä½¿ç”¨es6å‚æ•°è§£æ„
 function incremmentBy({ dispatch }, amount){
 	dispatch('INCREMENT', amount)
 }
 
-¹ºÎï³µÊµÀı£¨µ÷ÓÃÒì²½APIºÍ·Ö·¢¶àÖØmutations£©£º
+è´­ç‰©è½¦å®ä¾‹ï¼ˆè°ƒç”¨å¼‚æ­¥APIå’Œåˆ†å‘å¤šé‡mutationsï¼‰ï¼š
 function checkout ({ dispatch, state }, products){
-	const savedCartItems = [...state.cart.added]  //±£´æ¹ºÎï³µ
-	dispatch(types.CHECKOUT_REQUEST)			  //·¢³ö¼ì³öÇëÇó
+	const savedCartItems = [...state.cart.added]  //ä¿å­˜è´­ç‰©è½¦
+	dispatch(types.CHECKOUT_REQUEST)			  //å‘å‡ºæ£€å‡ºè¯·æ±‚
 	shop.buyProducts(			
 		products,
-		() => dispatch(types.CHECKOUT_SUCCESS),		//³É¹¦
-		() => dispatch(types.CHECKOUT_FAILURE, savedCartItems) //Ê§°Ü
+		() => dispatch(types.CHECKOUT_SUCCESS),		//æˆåŠŸ
+		() => dispatch(types.CHECKOUT_FAILURE, savedCartItems) //å¤±è´¥
 	)
 }
 
-/*** ÍêÕûÊµÀı ***/
+/*** å®Œæ•´å®ä¾‹ ***/
 //store.js
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -170,8 +170,8 @@ const mutations = {
 export default new Vuex.Store({
 	state,
 	mutation,
-	strict: true //ÑÏ¸ñÄ£Ê½£¬stateÔÚmutation handlesÍâ²¿±»ĞŞ¸Ä»á±¨´í
-	strict: proess.env.NODE_ENV !== 'production'  //²»ÔÚÉú²ú»·¾³ÖĞ¿ªÆôÑÏ¸ñÄ£Ê½
+	strict: true //ä¸¥æ ¼æ¨¡å¼ï¼Œstateåœ¨mutation handleså¤–éƒ¨è¢«ä¿®æ”¹ä¼šæŠ¥é”™
+	strict: proess.env.NODE_ENV !== 'production'  //ä¸åœ¨ç”Ÿäº§ç¯å¢ƒä¸­å¼€å¯ä¸¥æ ¼æ¨¡å¼
 })
 
 //actions.js
@@ -201,23 +201,23 @@ const app = new Vue({
 	}
 })
 
-×Ü½á£º
-Õû¸öÓ¦ÓÃµÄÊı¾İÁ÷ÊÇµ¥ÏòµÄ
-1.ÓÃ»§ÔÚ×é¼şÖĞµÄÊäÈë²Ù×÷´¥·¢actionµ÷ÓÃ
-2.ActionsÍ¨¹ı·Ö·¢mutationsÀ´ĞŞ¸ÄstoreÊµÀıµÄ×´Ì¬
-3.StoreÊµÀıµÄ×´Ì¬±ä»¯·´¹ıÀ´ÓÖÍ¨¹ıgetters±»×é¼ş»ñÖª
+æ€»ç»“ï¼š
+æ•´ä¸ªåº”ç”¨çš„æ•°æ®æµæ˜¯å•å‘çš„
+1.ç”¨æˆ·åœ¨ç»„ä»¶ä¸­çš„è¾“å…¥æ“ä½œè§¦å‘actionè°ƒç”¨
+2.Actionsé€šè¿‡åˆ†å‘mutationsæ¥ä¿®æ”¹storeå®ä¾‹çš„çŠ¶æ€
+3.Storeå®ä¾‹çš„çŠ¶æ€å˜åŒ–åè¿‡æ¥åˆé€šè¿‡gettersè¢«ç»„ä»¶è·çŸ¥
 
-¹æ·¶£º
-1.Ó¦ÓÃstate´æÔÚÓÚµ¥¸ö¶ÔÏóÖĞ
-2.Ö»ÓĞmutation handles¿ÉÒÔ¸Ä±ästate
-3.Mutations±ØĞëÊÇÍ¬²½µÄ£¬ËüÃÇ×öµÄÓ¦¸Ã½ö½öÊÇ¸Ä±ästate
-4.ËùÓĞÀàËÆÊı¾İ»ñÈ¡µÄÒì²½²Ù×÷Ï¸½Ú¶¼Ó¦·â×°ÔÚactionsÀïÃæ
-5.×é¼şÍ¨¹ıgetter´ÓstoreÖĞ»ñÈ¡state£¬²¢Í¨¹ıµ÷ÓÃactionsÀ´¸Ä±ästate
+è§„èŒƒï¼š
+1.åº”ç”¨stateå­˜åœ¨äºå•ä¸ªå¯¹è±¡ä¸­
+2.åªæœ‰mutation handleså¯ä»¥æ”¹å˜state
+3.Mutationså¿…é¡»æ˜¯åŒæ­¥çš„ï¼Œå®ƒä»¬åšçš„åº”è¯¥ä»…ä»…æ˜¯æ”¹å˜state
+4.æ‰€æœ‰ç±»ä¼¼æ•°æ®è·å–çš„å¼‚æ­¥æ“ä½œç»†èŠ‚éƒ½åº”å°è£…åœ¨actionsé‡Œé¢
+5.ç»„ä»¶é€šè¿‡getterä»storeä¸­è·å–stateï¼Œå¹¶é€šè¿‡è°ƒç”¨actionsæ¥æ”¹å˜state
 
 
-/*** ±íµ¥´¦Àí ***/
-v-model ÊôÓÚmutation handlesÒÔÍâµÄ²Ù×÷£¬²»ÔÊĞíĞŞ¸Ästate
-´¦Àí·½·¨£º
+/*** è¡¨å•å¤„ç† ***/
+v-model å±äºmutation handlesä»¥å¤–çš„æ“ä½œï¼Œä¸å…è®¸ä¿®æ”¹state
+å¤„ç†æ–¹æ³•ï¼š
 <input v-model="msg">
 mutations: {
 	UPDATE_MESSAGE(state, msg){
@@ -236,7 +236,7 @@ vuex: {
 	}
 },
 computed: {
-	msg: { //msgµÄgetterºÍsetter
+	msg: { //msgçš„getterå’Œsetter
 		get: {
 			return this.msg
 		},

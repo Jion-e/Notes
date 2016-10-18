@@ -1,4 +1,4 @@
-/************** 能根据URL获取到不同的pathname *****************/
+﻿/************** 能根据URL获取到不同的pathname *****************/
 server.js（服务）
 var http = require("http");
 var url = require("url");

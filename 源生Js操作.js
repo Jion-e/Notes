@@ -1,4 +1,4 @@
-shift 删除数组第一项
+﻿shift 删除数组第一项
 unshift 添加到childNodes 返回当前元素所有子元素的数组
 
 //DOM 创建:

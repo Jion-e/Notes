@@ -1,4 +1,4 @@
-/*** ÒıÈëfirebase ***/
+ï»¿/*** å¼•å…¥firebase ***/
 import firebase from 'firebase'
 
 var config = {
@@ -10,12 +10,12 @@ var config = {
 };
 firebase.initializeApp(config);
 
-/*** Êı¾İ¿â²Ù×÷ ***/
-//Á¬½ÓÊı¾İ¿â£º
-const db = firebase.database().ref;  //https://newssystem-2b6d6.firebaseio.com/£¨»ñÈ¡firebaseÊı¾İ¿âÁ¬½Ó£© 
-const mainNavRef = db.child('newsMainNav'); //https://newssystem-2b6d6.firebaseio.com/newsMainNav£¨»ñÈ¡Êı¾İ¿ânewsMainNav½ÚµãÊı¾İ£©
+/*** æ•°æ®åº“æ“ä½œ ***/
+//è¿æ¥æ•°æ®åº“ï¼š
+const db = firebase.database().ref;  //https://newssystem-2b6d6.firebaseio.com/ï¼ˆè·å–firebaseæ•°æ®åº“è¿æ¥ï¼‰ 
+const mainNavRef = db.child('newsMainNav'); //https://newssystem-2b6d6.firebaseio.com/newsMainNavï¼ˆè·å–æ•°æ®åº“newsMainNavèŠ‚ç‚¹æ•°æ®ï¼‰
 
-//¶ÁÈ¡Êı¾İ£º
+//è¯»å–æ•°æ®ï¼š
 let dataNav;
 mainNavRef.on('value', snapshot => {
     dataNav = snapshot.val();
@@ -23,21 +23,21 @@ mainNavRef.on('value', snapshot => {
      console.log("The read failed: " + err.code);
 })
 
-//»ñÈ¡key£º
+//è·å–keyï¼š
 const newMainNavKey = mainNavRef.push().key;
-//ĞÂÔöÊı¾İ£º
+//æ–°å¢æ•°æ®ï¼š
 mainNavRef.push().set({
-    "name": "ĞÂÎÅÏêÇé",
+    "name": "æ–°é—»è¯¦æƒ…",
     "icon": "icon-magic",
     "link": "#!/main/"
 })
 
-//¸üĞÂÊı¾İ
+//æ›´æ–°æ•°æ®
 mainNavRef.child('0').update({
     'link': '#!/main/newsList'
 })
 
-//set£º
+//setï¼š
 function writeUserData(userId, name, email, imageUrl) {
   firebase.database().ref('users/' + userId).set({
     username: name,
@@ -46,7 +46,7 @@ function writeUserData(userId, name, email, imageUrl) {
   });
 }
 
-//push¡¢update:
+//pushã€update:
 function writeNewPost(uid, username, picture, title, body) {
   // A post entry.
   var postData = {

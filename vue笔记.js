@@ -1,56 +1,63 @@
-×¢£ºmethods Àï¶¨ÒåµÄº¯ÊıÎªÍÕ·åÊ½½á¹¹£¬²»ÄÜÊÇÈâ´®¡£
+ï»¿æ³¨ï¼šmethods é‡Œå®šä¹‰çš„å‡½æ•°ä¸ºé©¼å³°å¼ç»“æ„ï¼Œä¸èƒ½æ˜¯è‚‰ä¸²ã€‚
 css: scoped
 [v-cloak] {visibility: hidden;}
 
-//´òÓ¡
+//äº‹ä»¶
+@click
+@focus
+@blur
+@change
+
+
+//æ‰“å°
 vm.log()
 
-//ÏìÓ¦Ê½Êı¾İ
+//å“åº”å¼æ•°æ®
   route: { data(transition) {this.getCurData();} },
   
 //style
 :style="{'background-image': 'url(' + item.fn_bg + ')'}"
 
-//tab±êÇ©ÇĞ»»£º
+//tabæ ‡ç­¾åˆ‡æ¢ï¼š
 :class="{'current-tab':iscur == $index}" @click="iscur = $index" 
 v-show="iscur == $index? true: false"
 
 //v-link
 v-link="{'name': 'news', 'params': {'id': '5456'}}"
 
-//¶àÊÂ¼ş°ó¶¨
+//å¤šäº‹ä»¶ç»‘å®š
 <div v-on="click: onClick, keyup: onKeyup, keydown: onKeydown"></div>
 
-//»ñÈ¡ÔªËØ×ÔÉí£º
+//è·å–å…ƒç´ è‡ªèº«ï¼š
 @click = "getMe($event)"
 getMe(event) { 
-	var el = event.currentTarget;  //×ªjQuery¶ÔÏó£º$(el)
+	var el = event.currentTarget;  //è½¬jQueryå¯¹è±¡ï¼š$(el)
 }
 
-//´«µİÊı×Ö£º
+//ä¼ é€’æ•°å­—ï¼š
 <mine :num = "1"></mine>
 
-forÑ­»·£º
-{{$index}} »ñÈ¡Ë÷Òı 	{{ $key }}»ñÈ¡key
- 1.¶ÔÏó£º v-for="(key, picSrc) of pics"  Ê¹ÓÃ£º{{key}} {{picSrc}}
-	  »ò£ºv-for="value of pics" 		 Ê¹ÓÃ£º{{ $key }} : {{ value }}
+forå¾ªç¯ï¼š
+{{$index}} è·å–ç´¢å¼• 	{{ $key }}è·å–key
+ 1.å¯¹è±¡ï¼š v-for="(key, picSrc) of pics"  ä½¿ç”¨ï¼š{{key}} {{picSrc}}
+	  æˆ–ï¼šv-for="value of pics" 		 ä½¿ç”¨ï¼š{{ $key }} : {{ value }}
 	  
- 2.Êı×é£º v-for="item of items"  		 Ê¹ÓÃ£º{{item.message }}
+ 2.æ•°ç»„ï¼š v-for="item of items"  		 ä½¿ç”¨ï¼š{{item.message }}
  
- 3.Ñ­»·¸öÊı: v-for="n of 10" 			 Ê¹ÓÃ{{ n }}
+ 3.å¾ªç¯ä¸ªæ•°: v-for="n of 10" 			 ä½¿ç”¨{{ n }}
  
- ¹ıÂËÆ÷£º
- <div v-for="item in items | filterBy 'hello'"></div>  //Ö»ÏÔÊ¾°üº¬×Ö·û´® "hello" µÄÔªËØ¡£
- <div v-for="user in users | filterBy 'Jack' in 'name'"></div> //ÓÃ»§¶ÔÏóµÄ name ÊôĞÔÖĞËÑË÷ "Jack"
- <div v-for="user in users | filterBy 'wzp' in 'name' 'phone'"></div> //'name' 'phone' ÊôĞÔÖĞËÑË÷ "wzp"
+ è¿‡æ»¤å™¨ï¼š
+ <div v-for="item in items | filterBy 'hello'"></div>  //åªæ˜¾ç¤ºåŒ…å«å­—ç¬¦ä¸² "hello" çš„å…ƒç´ ã€‚
+ <div v-for="user in users | filterBy 'Jack' in 'name'"></div> //ç”¨æˆ·å¯¹è±¡çš„ name å±æ€§ä¸­æœç´¢ "Jack"
+ <div v-for="user in users | filterBy 'wzp' in 'name' 'phone'"></div> //'name' 'phone' å±æ€§ä¸­æœç´¢ "wzp"
  
- ÅÅĞò£º
-  <li v-for="user in users | orderBy 'name'">	//°´Ãû×ÖÅÅĞòÓÃ»§
-  <li v-for="user in users | orderBy 'name' -1"> //½µĞò
-  <li v-for="user in users | orderBy 'lastName' 'firstName'"> //Ê¹ÓÃÁ½¸ö¼üÃûÅÅĞò
+ æ’åºï¼š
+  <li v-for="user in users | orderBy 'name'">	//æŒ‰åå­—æ’åºç”¨æˆ·
+  <li v-for="user in users | orderBy 'name' -1"> //é™åº
+  <li v-for="user in users | orderBy 'lastName' 'firstName'"> //ä½¿ç”¨ä¸¤ä¸ªé”®åæ’åº
   
   <button @click="order = order * -1">Reverse Sort Order</button>
-  <li v-for="user in users | orderBy 'name' order">//¶¯Ì¬ÅÅĞò
+  <li v-for="user in users | orderBy 'name' order">//åŠ¨æ€æ’åº
 
   
  

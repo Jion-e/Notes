@@ -1,72 +1,72 @@
-��ȡ���������:
-window.screen.height ��ȡ������߶�
-$(window).height()   ��ȡ��������ӻ����ڵĸ߶�
-$(document).height() ��ȡ�������ǰ�����ĵ��߶�
-$(document.body).height() ��ȡ�������ǰ����body�߶�
+﻿获取浏览器宽高:
+window.screen.height 获取浏览器高度
+$(window).height()   获取浏览器可视化窗口的高度
+$(document).height() 获取浏览器当前窗口文档高度
+$(document.body).height() 获取浏览器当前窗口body高度
 
-window.screen.width ��ȡ���������
-$(window).width()   ��ȡ��������ӻ����ڵĿ���
-$(document).width() ��ȡ�������ǰ�����ĵ�����
-$(document.body).width() ��ȡ�������ǰ����body����
+window.screen.width 获取浏览器宽度
+$(window).width()   获取浏览器可视化窗口的宽度
+$(document).width() 获取浏览器当前窗口文档宽度
+$(document.body).width() 获取浏览器当前窗口body宽度
 
-window.screenTop  ����������Top
-window.screenLeft ����������Left 
+window.screenTop  滚动条距离Top
+window.screenLeft 滚动条距离Left 
 
-���룺
-.after()�� ���ִ�Ԫ�ص� �ⲿ���� ���� ����Ԫ��  
-.before()�����ִ�Ԫ�ص� �ⲿ���� ǰ�� ����Ԫ��  
-.append()�����ִ�Ԫ�ص� �ڲ����� ���� ����Ԫ��  
-.prepend():���ִ�Ԫ�ص� �ڲ����� ǰ�� ����Ԫ��
-.wrap(): Ԫ�ذ���
-.wrapAll(): Ԫ�ذ���
-.empty(): ɾ��Ԫ�ص������ӽڵ�
-.remove(): ɾ��ƥ��Ԫ��
-.clone(): ��¡Ԫ��
-.replaceWith(): �滻�ڵ�
-.replaceAll(): �滻�ڵ�
+插入：
+.after()： 在现存元素的 外部，从 后面 插入元素  
+.before()：在现存元素的 外部，从 前面 插入元素  
+.append()：在现存元素的 内部，从 后面 插入元素  
+.prepend():在现存元素的 内部，从 前面 插入元素
+.wrap(): 元素包裹
+.wrapAll(): 元素包裹
+.empty(): 删除元素的所有子节点
+.remove(): 删除匹配元素
+.clone(): 克隆元素
+.replaceWith(): 替换节点
+.replaceAll(): 替换节点
 
-�ڵ������
-.children(): ��ȡȫ���ӽڵ�
-.next(): ��ȡ��һ���ֵܽڵ�
-.prev(): ��ȡǰһ���ֵܽڵ�
-.siblings(): ��ȡ�����ֵܽڵ�
-.closest(): ��ȡ�����ƥ��ڵ�
+节点遍历：
+.children(): 获取全部子节点
+.next(): 获取下一个兄弟节点
+.prev(): 获取前一个兄弟节点
+.siblings(): 获取所有兄弟节点
+.closest(): 获取最近的匹配节点
 
-��ֵ��
-.val():  ��ȡvauleֵ
-.attr(): ��ȡ����ֵ  	.removeAttr(): �Ƴ�����
-.text(): ��ȡԪ������
-.html(): ��ȡhtml����
+获值：
+.val():  获取vaule值
+.attr(): 获取属性值  	.removeAttr(): 移除属性
+.text(): 获取元素内容
+.html(): 获取html内容
 
-css������
-.css() :������ʽ����
-.width(): ��ȡԪ�ؿ���
-.height(): ��ȡԪ�ظ߶�
-.offset(): ��ȡԪ���ڵ�ǰ���ڵ����ƫ���� left,top;
-.position(): ��ȡԪ��������һ��������position���Եĸ��ڵ�����ƫ���� left,top;
-.scrollTop(): ��ȡ��ǰԪ�صĹ�������Ե�ǰԪ�ض�����λ��
-.scrollLeft(): ��ȡ��ǰԪ�صĹ�������Ե�ǰԪ����ߵ�λ��
+css操作：
+.css() :内联样式操作
+.width(): 获取元素宽度
+.height(): 获取元素高度
+.offset(): 获取元素在当前窗口的相对偏移量 left,top;
+.position(): 获取元素相对最近一个设置了position属性的父节点的相对偏移量 left,top;
+.scrollTop(): 获取当前元素的滚动条相对当前元素顶部的位置
+.scrollLeft(): 获取当前元素的滚动条相对当前元素左边的位置
 
-.addClass(): ����class
-.removeClass(): ɾ��class
-.toggleClass(): �л�class
-.hasClass(): �Ƿ�ʹ����ʽ
+.addClass(): 增加class
+.removeClass(): 删除class
+.toggleClass(): 切换class
+.hasClass(): 是否使用样式
 
-����Ч����
-.hide(): ����
-.show(): ��ʾ
-.toggle(): ��ʾ����
+动画效果：
+.hide(): 隐藏
+.show(): 显示
+.toggle(): 显示开关
 
-.fadeIn(): ����
-.fadeOut(): ����
-.fadeTo(): ���俪��
+.fadeIn(): 淡入
+.fadeOut(): 淡出
+.fadeTo(): 渐变开关
 
-.slideUp(): ���ϻ���
-.slideDown(): ���»���
-.slideToggle(): ��������
+.slideUp(): 向上滑动
+.slideDown(): 向下滑动
+.slideToggle(): 滑动开关
 
-.animate({params},speed,callback): �Զ��嶯�� ( λ�ÿ���ӣ�{left: "+=150px"} )
-.stop(): ֹͣ���ڽ��еĶ���
+.animate({params},speed,callback): 自定义动画 ( 位置可相加：{left: "+=150px"} )
+.stop(): 停止正在进行的动画
 
-���������
-.pop()ȥ���������һ��Ԫ��
+数组操作：
+.pop()去除数组最后一个元素

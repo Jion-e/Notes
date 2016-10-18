@@ -1,36 +1,36 @@
-·´ÒıºÅ£º$(`[data-control="${index}"]`)
+ï»¿åå¼•å·ï¼š$(`[data-control="${index}"]`)
 
-/*** Promise¶ÔÏó ***/
-Promise¶ÔÏó£ºÒì²½±à³Ì½â¾ö·½°¸£»
-Promise¶ÔÏóµÄÌØµã£º
-1.¶ÔÏóµÄ×´Ì¬²»ÊÜÍâ½çÓ°Ïì£ºÖ»ÓĞÒì²½²Ù×÷µÄ½á¹û²Å»áÓ°ÏìPending(½øĞĞÖĞ)¡¢Resolved(³É¹¦)¡¢Rejected(Ê§°Ü)ÕâÈıÖÖ×´Ì¬£¬
-						  ÆäËû²Ù×÷ÎŞ·¨¸Ä±äÕâ¸ö×´Ì¬£¨ÕâÒ²ÊÇPromiseÃû×ÖµÄÓÉÀ´£©
-2.Ò»µ©×´Ì¬¸Ä±ä£¬¾Í²»»áÔÙ±ä£¬ÈÎºÎÊ±ºò¶¼ÄÜµÃµ½Õâ¸ö½á¹û¡£²»Í¬ÓÚÊÂ¼ş£¬ÊÂ¼şÊÇ´í¹ıÁËÔÙÈ¥¼àÌı¾ÍÎŞ·¨µÃµ½½á¹û¡£
-È±µã£º
-1.ÎŞ·¨È¡Ïûpromise£¬Ò»µ©½¨Á¢Ëü¾Í»áÁ¢¼´Ö´ĞĞ£¬ÎŞ·¨ÖĞÍ¾È¡Ïû¡£
-2.Èç¹û²»ÉèÖÃ»Øµ÷º¯Êı£¬promise¶ÔÏóÄÚ²¿Å×³öµÄ´íÎó£¬²»»á·´Ó¦µ½Íâ²¿¡£
-3.´¦ÓÚpedding×´Ì¬Ê±ÎŞ·¨ÖªµÀ½øÕ¹µ½ÄÄÒ»¸ö½×¶Î¡£
+/*** Promiseå¯¹è±¡ ***/
+Promiseå¯¹è±¡ï¼šå¼‚æ­¥ç¼–ç¨‹è§£å†³æ–¹æ¡ˆï¼›
+Promiseå¯¹è±¡çš„ç‰¹ç‚¹ï¼š
+1.å¯¹è±¡çš„çŠ¶æ€ä¸å—å¤–ç•Œå½±å“ï¼šåªæœ‰å¼‚æ­¥æ“ä½œçš„ç»“æœæ‰ä¼šå½±å“Pending(è¿›è¡Œä¸­)ã€Resolved(æˆåŠŸ)ã€Rejected(å¤±è´¥)è¿™ä¸‰ç§çŠ¶æ€ï¼Œ
+						  å…¶ä»–æ“ä½œæ— æ³•æ”¹å˜è¿™ä¸ªçŠ¶æ€ï¼ˆè¿™ä¹Ÿæ˜¯Promiseåå­—çš„ç”±æ¥ï¼‰
+2.ä¸€æ—¦çŠ¶æ€æ”¹å˜ï¼Œå°±ä¸ä¼šå†å˜ï¼Œä»»ä½•æ—¶å€™éƒ½èƒ½å¾—åˆ°è¿™ä¸ªç»“æœã€‚ä¸åŒäºäº‹ä»¶ï¼Œäº‹ä»¶æ˜¯é”™è¿‡äº†å†å»ç›‘å¬å°±æ— æ³•å¾—åˆ°ç»“æœã€‚
+ç¼ºç‚¹ï¼š
+1.æ— æ³•å–æ¶ˆpromiseï¼Œä¸€æ—¦å»ºç«‹å®ƒå°±ä¼šç«‹å³æ‰§è¡Œï¼Œæ— æ³•ä¸­é€”å–æ¶ˆã€‚
+2.å¦‚æœä¸è®¾ç½®å›è°ƒå‡½æ•°ï¼Œpromiseå¯¹è±¡å†…éƒ¨æŠ›å‡ºçš„é”™è¯¯ï¼Œä¸ä¼šååº”åˆ°å¤–éƒ¨ã€‚
+3.å¤„äºpeddingçŠ¶æ€æ—¶æ— æ³•çŸ¥é“è¿›å±•åˆ°å“ªä¸€ä¸ªé˜¶æ®µã€‚
 
-»ù±¾ÓÃ·¨£º	
-resolveºÍreject²ÎÊıÊÇÁ½¸öº¯Êı£¬ÓĞJavaScriptÒıÇæÌá¹©£¬·µ»ØÒì²½²Ù×÷µÄ½á¹û
-//´´ÔìPromiseÊµÀı
+åŸºæœ¬ç”¨æ³•ï¼š	
+resolveå’Œrejectå‚æ•°æ˜¯ä¸¤ä¸ªå‡½æ•°ï¼Œæœ‰JavaScriptå¼•æ“æä¾›ï¼Œè¿”å›å¼‚æ­¥æ“ä½œçš„ç»“æœ
+//åˆ›é€ Promiseå®ä¾‹
 var promise = new Promise(function(resolve, reject){
 	//... some code
-	if(/* Òì²½²Ù×÷³É¹¦ */){
+	if(/* å¼‚æ­¥æ“ä½œæˆåŠŸ */){
 		resolve(value);  //pedding -> resolve
 	}else{
 		reject(error);	 //pedding -> reject
 	}
 })	
 
-//Ö¸¶¨»Øµ÷º¯Êı
+//æŒ‡å®šå›è°ƒå‡½æ•°
 promise.then(function(value){
-	//sucess		//×´Ì¬Îªresolveµ÷ÓÃ
+	//sucess		//çŠ¶æ€ä¸ºresolveè°ƒç”¨
 }, function(value){
-	//failure		//×´Ì¬Îªrejectµ÷ÓÃ
+	//failure		//çŠ¶æ€ä¸ºrejectè°ƒç”¨
 })
 
-//¼òµ¥Àı×Ó
+//ç®€å•ä¾‹å­
 function timeout(ms){
 	return new Promise((resolve, reject) => {
 	  setTimeout(resolve, ms, 'done');
@@ -40,33 +40,33 @@ timeout(100).then((value) => {
 	console.log(value);
 })
 
-×¢£ºPromise¶ÔÏó»áÁ¢¼´Ö´ĞĞ£¬µ«.then ·½·¨Ö¸¶¨µÄ»Øµ÷º¯Êı£¬ÒªÔÚËùÓĞÍ¬²½ÈÎÎñÍê³Éºó²Å»áÖ´ĞĞ¡£
+æ³¨ï¼šPromiseå¯¹è±¡ä¼šç«‹å³æ‰§è¡Œï¼Œä½†.then æ–¹æ³•æŒ‡å®šçš„å›è°ƒå‡½æ•°ï¼Œè¦åœ¨æ‰€æœ‰åŒæ­¥ä»»åŠ¡å®Œæˆåæ‰ä¼šæ‰§è¡Œã€‚
 
-±à³Ì·ç¸ñ£º
-Ä£¿é»¯£º
-Èç¹ûÄ£¿éÄ¬ÈÏÊä³öÒ»¸öº¯Êı£¬º¯ÊıÃûµÄÊ××ÖÄ¸Ó¦¸ÃĞ¡Ğ´¡£export default makeStyleGuide;
-Èç¹ûÄ£¿éÄ¬ÈÏÊä³öÒ»¸ö¶ÔÏó£¬¶ÔÏóÃûµÄÊ××ÖÄ¸Ó¦¸Ã´óĞ´¡£export default StyleGuide;
+ç¼–ç¨‹é£æ ¼ï¼š
+æ¨¡å—åŒ–ï¼š
+å¦‚æœæ¨¡å—é»˜è®¤è¾“å‡ºä¸€ä¸ªå‡½æ•°ï¼Œå‡½æ•°åçš„é¦–å­—æ¯åº”è¯¥å°å†™ã€‚export default makeStyleGuide;
+å¦‚æœæ¨¡å—é»˜è®¤è¾“å‡ºä¸€ä¸ªå¯¹è±¡ï¼Œå¯¹è±¡åçš„é¦–å­—æ¯åº”è¯¥å¤§å†™ã€‚export default StyleGuide;
 
 export {square, diag};
-import { square, diag } from 'lib'; µ¼ÈëlibÄ£¿éÏÂµÄsquareºÍdiagÊôĞÔ
+import { square, diag } from 'lib'; å¯¼å…¥libæ¨¡å—ä¸‹çš„squareå’Œdiagå±æ€§
 
 export default function () { ... };
-import myFunc from 'myFunc';  µ¼ÈëÕû¸öÄ£¿é
+import myFunc from 'myFunc';  å¯¼å…¥æ•´ä¸ªæ¨¡å—
 
 
-1.¿é¼¶×÷ÓÃÓò
-let È¡´ú var
-ÓÅÏÈÊ¹ÓÃconst£¬ÓÈÆäÊÇÈ«¾Ö»·¾³
+1.å—çº§ä½œç”¨åŸŸ
+let å–ä»£ var
+ä¼˜å…ˆä½¿ç”¨constï¼Œå°¤å…¶æ˜¯å…¨å±€ç¯å¢ƒ
 
-2.×Ö·û´®
-¾²Ì¬×Ö·û´®Ê¹ÓÃµ¥ÒıºÅ£¬¶¯Ì¬×Ö·û´®Ê¹ÓÃ·´ÒıºÅ
+2.å­—ç¬¦ä¸²
+é™æ€å­—ç¬¦ä¸²ä½¿ç”¨å•å¼•å·ï¼ŒåŠ¨æ€å­—ç¬¦ä¸²ä½¿ç”¨åå¼•å·
 
-3.½â¹¹¸³Öµ
-Êı×é¶Ô±äÁ¿¸³Öµ£º
+3.è§£æ„èµ‹å€¼
+æ•°ç»„å¯¹å˜é‡èµ‹å€¼ï¼š
 const arr = [1,2,3,4];
 const[first, second] = arr;  //first:1, second:2
 
-º¯ÊıµÄ²ÎÊıÈç¹ûÊÇ¶ÔÏóµÄ³ÉÔ±£º
+å‡½æ•°çš„å‚æ•°å¦‚æœæ˜¯å¯¹è±¡çš„æˆå‘˜ï¼š
 function getFullName(obj){
 	const { firstName, lastName } = obj; //firstName:obj.firstName, lastName:obj.lastName
 }
@@ -74,40 +74,40 @@ function getFullName(obj){
 function getFullName({ firstName, lastName }) {
 }
 
-Èç¹ûº¯Êı·µ»Ø¶à¸öÖµ£¬ÓÅÏÈÊ¹ÓÃ¶ÔÏóµÄ½â¹¹¸³Öµ£¬¶ø²»ÊÇÊı×éµÄ½â¹¹¸³Öµ¡£
+å¦‚æœå‡½æ•°è¿”å›å¤šä¸ªå€¼ï¼Œä¼˜å…ˆä½¿ç”¨å¯¹è±¡çš„è§£æ„èµ‹å€¼ï¼Œè€Œä¸æ˜¯æ•°ç»„çš„è§£æ„èµ‹å€¼ã€‚
 function processInput(input) {
   return { left, right, top, bottom };
 }
 const { left, right } = processInput(input);  //left:left, right:right
 
-4.Êı×é£º
-Ê¹ÓÃÀ©Õ¹ÔËËã·û£¨...£©¿½±´Êı×é
+4.æ•°ç»„ï¼š
+ä½¿ç”¨æ‰©å±•è¿ç®—ç¬¦ï¼ˆ...ï¼‰æ‹·è´æ•°ç»„
 const itemsCopy = [...items];
 
-Ê¹ÓÃArray.from·½·¨£¬½«ÀàËÆÊı×éµÄ¶ÔÏó×ªÎªÊı×é
+ä½¿ç”¨Array.fromæ–¹æ³•ï¼Œå°†ç±»ä¼¼æ•°ç»„çš„å¯¹è±¡è½¬ä¸ºæ•°ç»„
 const nodes = Array.from(foo);
 
-5.º¯Êı£º
-ĞèÒªÊ¹ÓÃº¯Êı±í´ïÊ½µÄ³¡ºÏ£¬¾¡Á¿ÓÃ¼ıÍ·º¯Êı´úÌæ
-function (naem){}  µÈ¼ÛÓÚ (name) => {}
+5.å‡½æ•°ï¼š
+éœ€è¦ä½¿ç”¨å‡½æ•°è¡¨è¾¾å¼çš„åœºåˆï¼Œå°½é‡ç”¨ç®­å¤´å‡½æ•°ä»£æ›¿
+function (naem){}  ç­‰ä»·äº (name) => {}
 (() => {
   console.log('Welcome to the Internet.');
 })();
 
-Ê¹ÓÃrestÔËËã·û£¨...£©´úÌæarguments
+ä½¿ç”¨restè¿ç®—ç¬¦ï¼ˆ...ï¼‰ä»£æ›¿arguments
 concatenateAll('a','b','22');
 function concatenateAll(...args) {
 	console.log(args);   //["a", "b", "22"]
 	return args.join(''); //"ab22"
 }
 
-Ê¹ÓÃÄ¬ÈÏÖµÓï·¨ÉèÖÃº¯Êı²ÎÊıµÄÄ¬ÈÏÖµ
+ä½¿ç”¨é»˜è®¤å€¼è¯­æ³•è®¾ç½®å‡½æ•°å‚æ•°çš„é»˜è®¤å€¼
 function handleThings(opts = {}) {
   // ...
 }
 
 6.class
-ÓÃClass£¬È¡´úĞèÒªprototypeµÄ²Ù×÷
+ç”¨Classï¼Œå–ä»£éœ€è¦prototypeçš„æ“ä½œ
 // bad
 function Queue(contents = []) {
   this._queue = [...contents];
@@ -129,7 +129,7 @@ class Queue {
     return value;
   }
 }
-Ê¹ÓÃextendsÊµÏÖ¼Ì³Ğ
+ä½¿ç”¨extendså®ç°ç»§æ‰¿
 // bad
 const inherits = require('inherits');
 function PeekableQueue(contents) {
